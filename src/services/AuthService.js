@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const AUTH_API_URL = 'http://localhost:3000/api/auth/';
+const AUTH_API_URL = 'https://fullstackrestapi.azurewebsites.net/api/auth/';
 
 class AuthService {
   static async register(user) {
