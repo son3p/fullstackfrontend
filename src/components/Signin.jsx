@@ -68,7 +68,7 @@ const Signin = () => {
             <p></p>
             <div className="form-group">
               <button className="btn btn-primary btn-block" >
-                Sign Up
+                Sign In
               </button>
             </div>
           </form>
