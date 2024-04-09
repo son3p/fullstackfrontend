@@ -85,7 +85,7 @@ const TodoUpdate = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="text" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time}/>
+                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time}/>
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
                         <p></p>
