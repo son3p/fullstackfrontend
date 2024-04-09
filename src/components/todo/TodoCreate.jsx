@@ -76,7 +76,7 @@ const TodoCreate = () => {
                             {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
                         </div>
                         <div className="form-group">
-                            <label htmlFor="estimated_time">Estimated time</label>
+                            <label htmlFor="estimated_time">Estimated_time</label>
                             <input type="number" {...register("estimated_time")} />
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
