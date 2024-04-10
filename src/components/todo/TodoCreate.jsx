@@ -72,12 +72,7 @@ const TodoCreate = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="priority">Priority</label>
-                            <select {...register("priority")}>
-                                <option value="urgent">Urgent</option>
-                                <option value="high">High</option>
-                                <option value="medium">Medium</option>
-                                <option value="low">Low</option> 
-                            </select>
+                            <input type="text" {...register("priority")} />
                             {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
                         </div>
                         <div className="form-group">
@@ -87,7 +82,7 @@ const TodoCreate = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="deadline">Deadline</label>
-                            <input type="datetime-local" {...register("deadline")} />
+                            <input type="number" {...register("deadline")} />
                             {errors?.deadline && <label className="error-feedback">{errors.deadline.message}</label>}
                         </div>
                         <p></p>
