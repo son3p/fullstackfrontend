@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './css/Auth.css';
 
+
 import AuthService from "../services/AuthService";
 
 const schema = yup.object().shape({
@@ -57,29 +58,29 @@ const Signup = () => {
   return (
     <>
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="card card-container border border-dark  border-4 rounded card-5 fw-bold ">
           <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" className="profile-img-card" />
           { !responseMessage && (
   
           <form onSubmit={handleSubmit(doSignup)}>
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <input type="text" {...register("username")} />
+              <input type="text" {...register("username")} className="form-control bg-light border border-dark" />
               {errors?.username && <label className="error-feedback">{errors.username.message}</label>}
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="text" {...register("email")} />
+              <input type="text" {...register("email")} className="form-control bg-light border border-dark" />
               {errors?.email && <label className="error-feedback">{errors.email.message}</label>}
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" {...register("password")} />
+              <input type="password" {...register("password")} className="form-control bg-light border border-dark"/>
               {errors?.password && <label className="error-feedback">{errors.password.message}</label>}
             </div>
             <p></p>
             <div className="form-group">
-              <button className="btn btn-primary btn-block" >
+              <button className="btn btn-dark border border-2 border-dark  button-1" >
                 Sign Up
               </button>
             </div>
