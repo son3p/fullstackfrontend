@@ -80,22 +80,17 @@ const TodoUpdate = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="priority">Priority</label>
-                            <select {...register("priority")} defaultValue={currentTodo.priority}>
-                                <option value="urgent">Urgent</option>
-                                <option value="high">High</option>
-                                <option value="medium">Medium</option>
-                                <option value="low">Low</option>
-                            </select>
+                            <input type="text" {...register("priority")} defaultValue={currentTodo.priority} />
                             {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="time" {...register("estimated_time")} defaultValue={currentTodo.estimated_time} />
+                            <input type="number" {...register("estimated_time")} defaultValue={currentTodo.estimated_time} />
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="deadline">Deadline</label>
-                            <input type="datetime-local" {...register("deadline")} defaultValue={currentTodo.deadline} />
+                            <input type="number" {...register("deadline")} defaultValue={currentTodo.deadline} />
                             {errors?.deadline && <label className="error-feedback">{errors.deadline.message}</label>}
                         </div>
                         <p></p>
