@@ -22,6 +22,14 @@ class UserService {
     return await axios.put(USER_API_URL + `api/todos/${todoId}`, todo, { headers: AuthService.authHeader() });
   }
   
+  async removeTodo(todoId) {
+    try {
+      return await axios.delete(USER_API_URL + `api/todos/${todoId}`, { headers: AuthService.authHeader() });
+    } catch (e) {
+      console.error('Error deleting todo:', e)
+      throw error;
+    }
+  }
 }
 
 export default new UserService();

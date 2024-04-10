@@ -12,7 +12,7 @@ import UserService from '../../services/UserService.js'
 
 import schema from './todoValidationSchema.js'
 
-const TodoUpdate = () => {
+const TodoDelete = () => {
     const {todoId} = useParams()
     const [responseMessage, setResponseMessage] = useState();
 
@@ -33,10 +33,10 @@ const TodoUpdate = () => {
     })
 
     // doUpdate is the one called by the forms handleSubmit
-    const doUpdate = async (formData) => {
+    const doDelete = async (formData) => {
 
         try {
-            const response = await UserService.changeTodoForUser(todoId, formData);
+            const response = await UserService.removeTodo(todoId, formData);
             // Show message and wait 3 second before going back
             setResponseMessage(response.data.message)
 
@@ -71,16 +71,16 @@ const TodoUpdate = () => {
         <>
             <div className="col-md-12">
                 <div className="card card-container">
-                    <h1> Edit todo</h1>
-                    <form onSubmit={handleSubmit(doUpdate)}>
+                    <h1>Delete todo</h1>
+                    <form onSubmit={handleSubmit(doDelete)}>
                         <div className="form-group">
                             <label htmlFor="task">Task</label>
-                            <input type="text" {...register("task")} defaultValue={currentTodo.task} />
+                            <input type="text" {...register("task")} defaultValue={currentTodo.task} readOnly/>
                             {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="priority">Priority</label>
-                            <select {...register("priority")} defaultValue={currentTodo.priority}>
+                            <select {...register("priority")} defaultValue={currentTodo.priority} readOnly>
                                 <option value="urgent">Urgent</option>
                                 <option value="high">High</option>
                                 <option value="medium">Medium</option>
@@ -90,18 +90,18 @@ const TodoUpdate = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="time" {...register("estimated_time")} defaultValue={currentTodo.estimated_time} />
+                            <input type="time" {...register("estimated_time")} defaultValue={currentTodo.estimated_time} readOnly/>
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="deadline">Deadline</label>
-                            <input type="datetime-local" {...register("deadline")} defaultValue={currentTodo.deadline} />
+                            <input type="datetime-local" {...register("deadline")} defaultValue={currentTodo.deadline} readOnly/>
                             {errors?.deadline && <label className="error-feedback">{errors.deadline.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
                             <button className="btn btn-primary btn-block" >
-                                Update
+                                Delete
                             </button>
                             <button onClick={handleCancel} className="btn btn-secondary btn-block">
                                 Cancel
@@ -120,4 +120,4 @@ const TodoUpdate = () => {
     )
 }
 
-export default TodoUpdate;
+export default TodoDelete;

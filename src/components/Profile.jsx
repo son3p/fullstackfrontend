@@ -19,14 +19,17 @@ const Profile = () => {
 
   return (
     <div className="container">
-      <header className="jumbotron">
-        <h3>
-          <strong>{currentUser.username}</strong> Profile
-        </h3>
-      </header>
-      <p>
-        <strong>Token:</strong> {currentUser.token.substring(0, 20)} ...{" "} {currentUser.token.substr(currentUser.token.length - 20)}
-      </p>
+        <div className="card border border-dark border-2 rounded card-7 col-md-8">
+          <header className="jumbotron">
+            <h1 className="bi bi-person-square"> Profile</h1>
+            <h3>
+              <strong>User:{currentUser.username}</strong> 
+            </h3>
+          </header>
+          <h4>
+            <strong>Token:</strong> {currentUser.token.substring(0, 20)} ...{" "} {currentUser.token.substr(currentUser.token.length - 20)}
+          </h4>
+          </div>
     </div>
   );
 };

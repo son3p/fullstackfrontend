@@ -1,0 +1,16 @@
+.card:hover {
+    
+    transition: background-color 0.3s ease; /* Add smooth transition effect */
+  }
+.card-1:hover{
+    background-color: rgba(128, 214, 214, 0.574); 
+}
+.card-2:hover{
+    background-color: rgba(215, 163, 235, 0.574); 
+}
+.card-3:hover{
+    background-color: rgba(138, 166, 222, 0.574); 
+}
+.card-4:hover{
+    background-color: rgba(167, 232, 190, 0.574); 
+}
