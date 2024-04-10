@@ -72,7 +72,7 @@ const TodoDelete = () => {
             <div className="col-md-12">
                 <div className="card card-container">
                     <h1>Delete todo</h1>
-                    <form onSubmit={handleSubmit(doUpdate)}>
+                    <form onSubmit={handleSubmit(doDelete)}>
                         <div className="form-group">
                             <label htmlFor="task">Task</label>
                             <input type="text" {...register("task")} defaultValue={currentTodo.task} readOnly/>
@@ -101,7 +101,7 @@ const TodoDelete = () => {
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
                             <button className="btn btn-primary btn-block" >
-                                Update
+                                Delete
                             </button>
                             <button onClick={handleCancel} className="btn btn-secondary btn-block">
                                 Cancel
@@ -120,4 +120,4 @@ const TodoDelete = () => {
     )
 }
 
-export default TodoUpdate;
+export default TodoDelete;
