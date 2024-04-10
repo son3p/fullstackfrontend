@@ -19,17 +19,20 @@ const Table = ({ caption, fields, rows, resourceName}) => {
             </tr>
           </thead>
           <tbody>
-            { rows.map((row, key) => (
-                <tr key={key}>
-                  { fields.map((field,key) => (
-                      <td key= {key}> {row[field.name]}</td> // pick the property from the row with given name
-                    ))                
-                  }
-                  <td key ={key}> <Link className="btn btn-info mr-2" to={`${resourceName}/${row.id}/update`} state={row}>edit</Link> </td>
-                </tr>
-              ))
-            }
-          </tbody>
+        {rows.map((row, rowKey) => (
+            <tr key={rowKey}>
+                {fields.map((field, fieldKey) => (
+                    <td key={fieldKey}> {row[field.name]}</td>
+                ))}
+                <td>
+                    <Link className="btn btn-info mr-2" to={`${resourceName}/${row.id}/update`} state={row}>edit</Link>
+                </td>
+                <td>
+                    <Link className="btn btn-danger mr-2" to={`${resourceName}/${row.id}/delete`} state={row}>delete</Link>
+                </td>
+            </tr>
+        ))}
+    </tbody>
         </table>
       </>
     );

@@ -71,14 +71,24 @@ const TodoCreate = () => {
                             {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
                         </div>
                         <div className="form-group">
-                            <label htmlFor="body">Body</label>
-                            <input type="text" {...register("body")} />
-                            {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
+                            <label htmlFor="priority">Priority</label>
+                            <select {...register("priority")}>
+                                <option value="urgent">Urgent</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option> 
+                            </select>
+                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated_time</label>
                             <input type="number" {...register("estimated_time")} />
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="deadline">Deadline</label>
+                            <input type="datetime-local" {...register("deadline")} />
+                            {errors?.deadline && <label className="error-feedback">{errors.deadline.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
