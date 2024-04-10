@@ -73,25 +73,20 @@ const TodoDelete = () => {
                 <div className="card card-container">
                     <h1>Delete todo</h1>
                     <form onSubmit={handleSubmit(doDelete)}>
-                        <div className="form-group">
+                    <div className="form-group">
                             <label htmlFor="task">Task</label>
-                            <input type="text" {...register("task")} defaultValue={currentTodo.task} readOnly/>
+                            <input type="text" {...register("task")} defaultValue = {currentTodo.task} readOnly/>
                             {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
                         </div>
                         <div className="form-group">
-                            <label htmlFor="priority">Priority</label>
-                            <input type="text" {...register("priority")} defaultValue={currentTodo.priority} readOnly/>
-                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
+                            <label htmlFor="body">Body</label>
+                            <input type="text" {...register("body")} defaultValue = {currentTodo.body} readOnly/>
+                            {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="number" {...register("estimated_time")} defaultValue={currentTodo.estimated_time} readOnly/>
+                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time} readOnly/>
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="deadline">Deadline</label>
-                            <input type="number" {...register("deadline")} defaultValue={currentTodo.deadline} readOnly/>
-                            {errors?.deadline && <label className="error-feedback">{errors.deadline.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
