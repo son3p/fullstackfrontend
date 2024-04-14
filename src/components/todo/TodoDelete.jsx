@@ -70,30 +70,30 @@ const TodoDelete = () => {
     return (
         <>
             <div className="col-md-12">
-                <div className="card card-container">
+                <div className="card card-container card-10 fw-bold">
                     <h1>Delete todo</h1>
                     <form onSubmit={handleSubmit(doDelete)}>
                     <div className="form-group">
                             <label htmlFor="task">Task</label>
-                            <input type="text" {...register("task")} defaultValue = {currentTodo.task} readOnly/>
+                            <input type="text" {...register("task")} defaultValue = {currentTodo.task} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="body">Body</label>
-                            <input type="text" {...register("body")} defaultValue = {currentTodo.body} readOnly/>
+                            <input type="text" {...register("body")} defaultValue = {currentTodo.body} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time} readOnly/>
+                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
-                            <button className="btn btn-primary btn-block" >
+                            <button className="btn btn-dark border border-2 border-dark button-11  btn-block" >
                                 Delete
                             </button>
-                            <button onClick={handleCancel} className="btn btn-secondary btn-block">
+                            <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-12  btn-block">
                                 Cancel
                             </button>
                         </div>

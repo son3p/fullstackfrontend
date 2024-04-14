@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './css/Auth.css';
+import Footer from "./Footer";
 
 
 import AuthService from "../services/AuthService";
@@ -94,7 +95,9 @@ const Signup = () => {
           }
         </div>
       </div>
-        
+      <div className="mt-5">
+            <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
+        </div> 
     </>
   )
 }

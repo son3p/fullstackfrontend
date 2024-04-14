@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Footer from "./Footer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -80,6 +81,9 @@ const Signin = () => {
           }
         </div>
       </div>
+      <div className="mt-5">
+            <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
+        </div>
     </>
   )
 }

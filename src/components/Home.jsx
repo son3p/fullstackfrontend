@@ -37,7 +37,7 @@ const Homepage = () => (
             </div>
         </div>
         <div className="mt-5">
-            <Footer name="Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
+            <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
         </div>
     </div>
 

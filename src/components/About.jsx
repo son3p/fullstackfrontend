@@ -5,7 +5,7 @@ const About = () => (
         <div className="m-4">
             <h1>About</h1>
             <hr />
-            <h3>Information about the story behind to devleopment of the application and the team.</h3>
+            <h3>Information about the story behind the devleopment of the application and the team.</h3>
         </div>
         <div className="container">
             <div className="row">
@@ -32,7 +32,7 @@ const About = () => (
         </div>
         
         <div className="mt-5">
-            <Footer name="Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
+            <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
         </div>  
     </div>
 );
