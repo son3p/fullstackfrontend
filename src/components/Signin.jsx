@@ -36,12 +36,12 @@ const Signin = () => {
   })
 
   const doSignin = async (formData) => {
-   
+
     try {
       const result = await AuthService.login(formData)
       setResponseMessage(result.message)
       navigate("/profile");
-      
+
 
     } catch (error) {
       console.log(error);
@@ -50,17 +50,22 @@ const Signin = () => {
   }
 
   return (
-    <>
+    <> 
+      <div className="m-4 " style={{ fontFamily: 'Courier New' }}>
+        <h1 >Login</h1>
+        <hr />
+        <h3>Sign in to handle your Todos!</h3>
+      </div>
       <div className="col-md-12">
         <div className="card card-container border border-dark  border-4 rounded card-6 fw-bold">
           <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" className="profile-img-card" />
           <form onSubmit={handleSubmit(doSignin)}>
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <input type="text" {...register("username")} className="form-control bg-light border border-dark"/>
+              <input type="text" {...register("username")} className="form-control bg-light border border-dark" />
               {errors?.username && <label className="error-feedback">{errors.username.message}</label>}
             </div>
-           
+
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input type="password" {...register("password")} className="form-control bg-light border border-dark" />
@@ -82,8 +87,8 @@ const Signin = () => {
         </div>
       </div>
       <div className="mt-5">
-            <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
-        </div>
+        <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
+      </div>
     </>
   )
 }

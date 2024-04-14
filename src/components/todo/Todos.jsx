@@ -33,6 +33,10 @@ const Todos = () => {
 
     return (
         <>
+            <div className="m-4 "style={{ fontFamily: 'Courier New' }}>
+                <h1 >Tasks</h1>
+                <hr />
+            </div>
             <div className="container mt-5 mb-5">
                 <h1 className="mt-5 mb-5 fw-bolder"> User&apos;s Todos </h1>
 
