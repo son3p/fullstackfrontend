@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './css/Auth.css';
+import Footer from "./Footer";
 
 
 import AuthService from "../services/AuthService";
@@ -57,6 +58,11 @@ const Signup = () => {
   
   return (
     <>
+    <div className="m-4 " style={{ fontFamily: 'Courier New' }}>
+        <h1 >Register</h1>
+        <hr />
+        <h3>Register to use application!</h3>
+      </div>
       <div className="col-md-12">
         <div className="card card-container border border-dark  border-4 rounded card-5 fw-bold ">
           <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" className="profile-img-card" />
@@ -94,7 +100,9 @@ const Signup = () => {
           }
         </div>
       </div>
-        
+      <div className="mt-5">
+            <Footer name="Website Made By: Hugo, Kim & Ella. Year 2024. Class: INF23F-Å." styling="text-light text-center border border-dark  p-3"></Footer>
+        </div> 
     </>
   )
 }

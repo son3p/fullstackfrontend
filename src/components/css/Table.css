@@ -1,0 +1,16 @@
+.button-5{
+    background-color: rgb(167, 133, 229);
+    color: rgb(253, 251, 251);
+   } 
+   .button-6{
+    background-color: rgb(179, 68, 72);
+    color: rgb(253, 251, 251);
+   } 
+.table{
+    font-family:Courier New;
+}
+
+.small-container {
+    max-width: 500px; /* Adjust the value as needed */
+    
+  }
