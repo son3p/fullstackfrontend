@@ -9,3 +9,8 @@
 .table{
     font-family:Courier New;
 }
+
+.small-container {
+    max-width: 500px; /* Adjust the value as needed */
+    
+  }
