@@ -42,7 +42,7 @@ const Todos = () => {
                 <h1 className="mt-3 mb-3 fw-bolder"> User&apos;s Todos </h1>
 
                 <a className="btn btn-dark border border-2 border-dark button-3 bi-journal-plus" href="/todos/create">Create new todo</a>
-                <button type="button" className="btn btn-dark border border-2 border-dark button-4 ms-5" onClick={getAllTodos}>Refresh site</button>
+                <button type="button" className="btn btn-dark border border-2 border-dark button-4 mt-2 d-block" onClick={getAllTodos}>Refresh site</button>
                 {error && <p className="text-danger">{error}</p>}
                 <div className="my-4">
                     <Table caption={''} fields={fields} rows={todos} resourceName='/todos'></Table>
