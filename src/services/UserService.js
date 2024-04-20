@@ -14,6 +14,16 @@ class UserService {
     return await axios.get(USER_API_URL + 'api/todos', { headers: AuthService.authHeader() });
   }
 
+  async fetchTasksForUser(todoId) {
+    try {
+        return await axios.get(USER_API_URL + `api/todos/${todoId}`, { headers: AuthService.authHeader() });
+    } catch (error) {
+        // Handle the error here
+        console.error('Error fetching tasks for user:', error);
+        throw error; // Optionally, re-throw the error to propagate it further
+    }
+}
+
   async addTodoForUser(todo) {
     return await axios.post(USER_API_URL + 'api/todos', todo, { headers: AuthService.authHeader() });
   }
