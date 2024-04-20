@@ -88,6 +88,11 @@ const TodoDelete = () => {
                             <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
+                        <div className="form-group">
+                            <label htmlFor="priority">Priority</label>
+                            <input type="text" {...register("priority")} defaultValue = {currentTodo.priority} readOnly className="form-control bg-light border border-dark"/>
+                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
+                        </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
                             

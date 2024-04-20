@@ -20,7 +20,7 @@ class UserService {
     } catch (error) {
         // Handle the error here
         console.error('Error fetching tasks for user:', error);
-        throw error; // Optionally, re-throw the error to propagate it further
+        throw error;
     }
 }
 
