@@ -20,6 +20,7 @@ const Table = ({ caption, fields, rows, resourceName }) => {
                       </div>
                     ))}
                     <div className=" mt-2">
+                      <Link className="btn btn-dark border border-2 border-dark me-4  button-6" to={`${resourceName}/${row.id}/detail`} state={row}>Details</Link>
                       <Link className="btn btn-dark border border-2 border-dark me-4 button-5" to={`${resourceName}/${row.id}/update`} state={row}>Edit</Link>
                       <Link className="btn btn-dark border border-2 border-dark  button-6" to={`${resourceName}/${row.id}/delete`} state={row}>Delete</Link>
                     </div>

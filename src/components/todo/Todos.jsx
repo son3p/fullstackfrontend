@@ -28,9 +28,7 @@ const Todos = () => {
     const fields = [
         { name: 'id', label: 'Id' },
         { name: 'task', label: 'Task' },
-        { name: 'body', label: 'Body' },
-        { name: 'estimated_time', label: 'Estimated_time' },
-        { name: 'createdAt', label: 'Creation time ' }];
+        { name: 'createdAt', label: 'Creation time ' },];
 
     return (
         <>

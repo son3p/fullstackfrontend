@@ -10,6 +10,7 @@ import Todos from './components/todo/Todos.jsx'
 import TodoCreate from './components/todo/TodoCreate.jsx'
 import TodoUpdate from './components/todo/TodoUpdate.jsx'
 import TodoDelete from './components/todo/TodoDelete.jsx'
+import TodoDetail from './components/todo/TodoDetail.jsx'
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     {
       path: "/todos/create",
       element: <TodoCreate />,
+    },
+    {
+      path: "/todos/:todoId/detail",
+      element: <TodoDetail />,
     },
     {
       path: "/todos/:todoId/update",
