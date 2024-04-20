@@ -82,11 +82,12 @@ const TodoCreate = () => {
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
-                            <button className="btn btn-dark border border-2 border-dark button-7 btn-block" >
-                                Create
-                            </button>
+                           
                             <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-8 btn-block">
                                 Cancel
+                            </button>
+                            <button className="btn btn-dark border border-2 border-dark button-7 btn-block" >
+                                Create
                             </button>
                         </div>
                     </form>
