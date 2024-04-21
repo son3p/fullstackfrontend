@@ -64,7 +64,7 @@ const TodoCreate = () => {
             <div className="col-md-12">
                 <div className="card card-container card-8 fw-bold ">
                     <h1> New todo</h1>
-                    <form onSubmit={handleSubmit(doCreate)} className=''>
+                    <form onSubmit={handleSubmit(doCreate)} >
                         <div className="form-group ">
                             <label htmlFor="task">Task</label>
                             <input type="text" {...register("task")}  className="form-control bg-light border border-dark" />
@@ -76,7 +76,7 @@ const TodoCreate = () => {
                             {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
                         </div>
                         <div className="form-group">
-                            <label htmlFor="estimated_time">Estimated_time</label>
+                            <label htmlFor="estimated_time">Estimated time</label>
                             <input type="number" {...register("estimated_time")}  className="form-control bg-light border border-dark" />
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>

@@ -80,17 +80,17 @@ const TodoDelete = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="body">Body</label>
-                            <input type="text" {...register("body")} defaultValue = {currentTodo.body} readOnly className="form-control bg-light border border-dark"/>
+                            <input type="text" {...register("body")} defaultValue = {currentTodo.tasks[0].body} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.estimated_time} readOnly className="form-control bg-light border border-dark"/>
+                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.tasks[0].estimated_time} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
                         <div className="form-group">
                             <label htmlFor="priority">Priority</label>
-                            <input type="text" {...register("priority")} defaultValue = {currentTodo.priority} readOnly className="form-control bg-light border border-dark"/>
+                            <input type="text" {...register("priority")} defaultValue = {currentTodo.tasks[0].priority} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
                         </div>
                         <p></p>
