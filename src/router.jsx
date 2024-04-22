@@ -15,6 +15,7 @@ import TodoDelete from './components/todo/TodoDelete.jsx'
 import Tasks from './components/task/Tasks.jsx';
 import TaskUpdate from './components/task/TaskUpdate.jsx';
 import TaskDelete from './components/task/TaskDelete.jsx';
+import TaskCreate from './components/task/TaskCreate.jsx';
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     {
       path: "/todos/create",
       element: <TodoCreate />,
+    },
+    {
+      path: "/todos/:todoId/task/create",
+      element: <TaskCreate />,
     },
     {
       path: "/todos/:todoId/update",

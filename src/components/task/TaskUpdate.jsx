@@ -38,7 +38,7 @@ const TaskUpdate = () => {
     const doUpdate = async (formData) => {
 
         try {
-            const response = await UserService.changeTaskForUser(todoId, taskId, formData);
+            const response = await UserService.changeTaskForUser(formData, todoId, taskId);
             // Show message and wait 3 second before going back
             setResponseMessage(response.data.message)
 

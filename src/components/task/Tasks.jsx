@@ -36,6 +36,7 @@ const Tasks = () => {
 
     return (
         <>
+        <Link className="btn btn-dark border border-2 border-dark button-3 bi-journal-plus" to={`/todos/${todoId}/task/create`}>Create new todo</Link>
         <div className='list-container'>
         <div className="list-group">
           <div className="row">
@@ -56,6 +57,7 @@ const Tasks = () => {
                 </li>
               </div>
             ))}
+
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ class UserService {
     return await axios.get(USER_API_URL + 'api/todos', { headers: AuthService.authHeader() });
   }
 
-  async addTaskForUser(task) {
+  async addTaskForUser(task, todoId) {
     return await axios.post(USER_API_URL + `api/todos/${todoId}/task`, task, { headers: AuthService.authHeader() });
   }
 
@@ -26,7 +26,7 @@ class UserService {
     return await axios.post(USER_API_URL + 'api/todos', todo, { headers: AuthService.authHeader() });
   }
 
-  async changeTaskForUser(todoId, task, taskId) {
+  async changeTaskForUser(task, todoId, taskId) {
     try {
     return await axios.put(USER_API_URL + `api/todos/${todoId}/task/${taskId}`, task, { headers: AuthService.authHeader() });
   } catch (e) {

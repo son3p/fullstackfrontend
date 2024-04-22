@@ -37,7 +37,7 @@ const TaskDelete = () => {
     const doDelete = async (formData) => {
 
         try {
-            const response = await UserService.removeTodo(todoId, taskId, formData);
+            const response = await UserService.removeTask(todoId, taskId, formData);
             // Show message and wait 3 second before going back
             setResponseMessage(response.data.message)
 
