@@ -27,7 +27,11 @@ class UserService {
   }
 
   async changeTaskForUser(todoId, task, taskId) {
+    try {
     return await axios.put(USER_API_URL + `api/todos/${todoId}/task/${taskId}`, task, { headers: AuthService.authHeader() });
+  } catch (e) {
+    console.error(e)
+  }
   }
 
   async changeTodoForUser(todoId, todo) {

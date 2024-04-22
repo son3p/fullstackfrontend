@@ -10,6 +10,8 @@ import '../css/Todo.css';
 
 import UserService from '../../services/UserService.js'
 
+import schema from './taskValidationSchema.js'
+
 
 const TaskUpdate = () => {
     const {todoId} = useParams()

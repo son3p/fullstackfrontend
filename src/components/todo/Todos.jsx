@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import UserService from '../../services/UserService.js'
 
+import Task from '../task/Tasks.jsx'
+
 import Table from "../Table.jsx"
 import Footer from "../Footer";
 
