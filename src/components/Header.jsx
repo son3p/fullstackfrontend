@@ -14,7 +14,7 @@ export default function Header() {
               <a className="nav-link bi bi-house-door-fill" href="/">Home</a>
             </li>
             <li className="nav-item m-2">
-              <a className="nav-link bi bi-list-task" href="/todos">Tasks</a>
+              <a className="nav-link bi bi-list-task" href="/todos">Todos</a>
             </li>
             <li className="nav-item m-2">
               <a className="nav-link bi bi-bookmark-fill" href="/about">About</a>
