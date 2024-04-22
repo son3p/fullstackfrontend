@@ -20,7 +20,11 @@ const Table = ({ caption, fields, rows, resourceName}) => {
                       </div>
                     ))}
                     <div className=" mt-2">
+<<<<<<< HEAD
                       <Link className="btn btn-dark border border-2 border-dark  button-6" to={`${resourceName}/${row.id}/task`} state={row}>Details</Link>
+=======
+                      <Link className="btn btn-dark border border-2 border-dark me-4  button-13" to={`${resourceName}/${row.id}/detail`} state={row}>Details</Link>
+>>>>>>> 6105f49f22c8ad57fac91f5fb72980aa0a9e4b5c
                       <Link className="btn btn-dark border border-2 border-dark me-4 button-5" to={`${resourceName}/${row.id}/update`} state={row}>Edit</Link>
                       <Link className="btn btn-dark border border-2 border-dark  button-6" to={`${resourceName}/${row.id}/delete`} state={row}>Delete</Link>
                     </div>

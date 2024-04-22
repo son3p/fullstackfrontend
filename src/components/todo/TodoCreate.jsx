@@ -64,11 +64,32 @@ const TodoCreate = () => {
             <div className="col-md-12">
                 <div className="card card-container card-8 fw-bold ">
                     <h1> New todo</h1>
-                    <form onSubmit={handleSubmit(doCreate)} className=''>
+                    <form onSubmit={handleSubmit(doCreate)} >
                         <div className="form-group ">
+<<<<<<< HEAD
                             <label htmlFor="todo">Todo</label>
                             <input type="text" {...register("todo")}  className="form-control bg-light border border-dark" />
                             {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
+=======
+                            <label htmlFor="task">Task</label>
+                            <input type="text" {...register("task")}  className="form-control bg-light border border-dark" />
+                            {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="body">Body</label>
+                            <input type="text" {...register("body")}  className="form-control bg-light border border-dark" />
+                            {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="estimated_time">Estimated time</label>
+                            <input type="number" {...register("estimated_time")}  className="form-control bg-light border border-dark" />
+                            {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="priority">Priority</label>
+                            <input type="text" {...register("priority")}  className="form-control bg-light border border-dark" />
+                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
+>>>>>>> 6105f49f22c8ad57fac91f5fb72980aa0a9e4b5c
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
