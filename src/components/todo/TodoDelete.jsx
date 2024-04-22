@@ -74,30 +74,9 @@ const TodoDelete = () => {
                     <h1>Delete todo</h1>
                     <form onSubmit={handleSubmit(doDelete)}>
                     <div className="form-group">
-<<<<<<< HEAD
                             <label htmlFor="todo">Todo</label>
                             <input type="text" {...register("todo")} defaultValue = {currentTodo.todo} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
-=======
-                            <label htmlFor="task">Task</label>
-                            <input type="text" {...register("task")} defaultValue = {currentTodo.task} readOnly className="form-control bg-light border border-dark"/>
-                            {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="body">Body</label>
-                            <input type="text" {...register("body")} defaultValue = {currentTodo.tasks[0].body} readOnly className="form-control bg-light border border-dark"/>
-                            {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="number" {...register("estimated_time")} defaultValue = {currentTodo.tasks[0].estimated_time} readOnly className="form-control bg-light border border-dark"/>
-                            {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="priority">Priority</label>
-                            <input type="text" {...register("priority")} defaultValue = {currentTodo.tasks[0].priority} readOnly className="form-control bg-light border border-dark"/>
-                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
->>>>>>> 6105f49f22c8ad57fac91f5fb72980aa0a9e4b5c
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
