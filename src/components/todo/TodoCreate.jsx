@@ -64,30 +64,14 @@ const TodoCreate = () => {
             <div className="col-md-12">
                 <div className="card card-container card-8 fw-bold ">
                     <h1> New todo</h1>
-                    <form onSubmit={handleSubmit(doCreate)} >
+                    <form onSubmit={handleSubmit(doCreate)} className=''>
                         <div className="form-group ">
-                            <label htmlFor="task">Task</label>
-                            <input type="text" {...register("task")}  className="form-control bg-light border border-dark" />
-                            {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="body">Body</label>
-                            <input type="text" {...register("body")}  className="form-control bg-light border border-dark" />
-                            {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="estimated_time">Estimated time</label>
-                            <input type="number" {...register("estimated_time")}  className="form-control bg-light border border-dark" />
-                            {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="priority">Priority</label>
-                            <input type="text" {...register("priority")}  className="form-control bg-light border border-dark" />
-                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
+                            <label htmlFor="todo">Todo</label>
+                            <input type="text" {...register("todo")}  className="form-control bg-light border border-dark" />
+                            {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
-                           
                             <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-8 btn-block">
                                 Cancel
                             </button>

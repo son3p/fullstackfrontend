@@ -27,20 +27,20 @@ const Todos = () => {
 
     const fields = [
         { name: 'id', label: 'Id' },
-        { name: 'task', label: 'Task' },
-        { name: 'createdAt', label: 'Creation time ' },];
+        { name: 'todo', label: 'Todo' },
+        { name: 'createdAt', label: 'Creation time ' }];
 
     return (
         <>
             <div className="m-4 " style={{ fontFamily: 'Courier New' }}>
-                <h1 >Tasks</h1>
+                <h1 >Todos</h1>
                 <hr />
             </div>
             <div className="container mt-5 mb-5">
                 <h1 className="mt-3 mb-3 fw-bolder"> User&apos;s Todos </h1>
 
                 <a className="btn btn-dark border border-2 border-dark button-3 bi-journal-plus" href="/todos/create">Create new todo</a>
-                <button type="button" className="btn btn-dark border border-2 border-dark button-4 mt-2 d-block bi bi-arrow-clockwise" onClick={getAllTodos}>Refresh site</button>
+                <button type="button" className="btn btn-dark border border-2 border-dark button-4 mt-2 d-block" onClick={getAllTodos}>Refresh site</button>
                 {error && <p className="text-danger">{error}</p>}
                 <div className="my-4">
                     <Table caption={''} fields={fields} rows={todos} resourceName='/todos'></Table>

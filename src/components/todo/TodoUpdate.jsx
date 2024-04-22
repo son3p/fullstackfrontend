@@ -70,47 +70,33 @@ const TodoUpdate = () => {
     return (
         <>
             <div className="col-md-12">
-    <div className="card card-container card-9 fw-bold">
-        <h1>Edit todo</h1>
-        <form onSubmit={handleSubmit(doUpdate)}>
-            <div className="form-group">
-                <label htmlFor="task">Task</label>
-                <input type="text" {...register("task")} defaultValue={currentTodo.task} className="form-control bg-light border border-dark"/>
-                {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
+                <div className="card card-container card-9 fw-bold">
+                    <h1>Edit todo</h1>
+                    <form onSubmit={handleSubmit(doUpdate)}>
+                        <div className="form-group">
+                            <label htmlFor="todo">Todo</label>
+                            <input type="text" {...register("todo")} defaultValue = {currentTodo.todo} className="form-control bg-light border border-dark"/>
+                            {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
+                        </div>
+                        <p></p>
+                        <div className="form-group d-flex justify-content-between">
+                            
+                            <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-10 btn-block">
+                                Cancel
+                            </button>
+                            <button className="btn btn-dark border border-2 border-dark button-9 btn-block" >
+                                Update
+                            </button>
+                        </div>
+                    </form>
+                    <p></p>
+                    {responseMessage && (
+                        <div className="alert alert-success" >
+                            {responseMessage}
+                        </div>)
+                    }
+                </div>
             </div>
-            <div className="form-group">
-                <label htmlFor="body">Body</label>
-                <input type="text" {...register("body")} defaultValue={currentTodo.tasks[0].body} className="form-control bg-light border border-dark"/>
-                {errors?.body && <label className="error-feedback">{errors.body.message}</label>}
-            </div>
-            <div className="form-group">
-                <label htmlFor="estimated_time">Estimated time</label>
-                <input type="number" {...register("estimated_time")} defaultValue={currentTodo.tasks[0].estimated_time} className="form-control bg-light border border-dark"/>
-                {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
-            </div>
-            <div className="form-group">
-                <label htmlFor="priority">Priority</label>
-                <input type="text" {...register("priority")} defaultValue={currentTodo.tasks[0].priority} className="form-control bg-light border border-dark"/>
-                {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
-            </div>
-            <p></p>
-            <div className="form-group d-flex justify-content-between">
-                <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-10 btn-block">
-                    Cancel
-                </button>
-                <button className="btn btn-dark border border-2 border-dark button-9 btn-block" >
-                    Update
-                </button>
-            </div>
-        </form>
-        <p></p>
-        {responseMessage && (
-            <div className="alert alert-success" >
-                {responseMessage}
-            </div>)
-        }
-    </div>
-</div>
         </>
     )
 }

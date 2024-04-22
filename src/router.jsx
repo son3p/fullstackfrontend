@@ -10,7 +10,10 @@ import Todos from './components/todo/Todos.jsx'
 import TodoCreate from './components/todo/TodoCreate.jsx'
 import TodoUpdate from './components/todo/TodoUpdate.jsx'
 import TodoDelete from './components/todo/TodoDelete.jsx'
-import TodoDetail from './components/todo/TodoDetail.jsx'
+
+// Subnote related
+import Tasks from './components/task/Tasks.jsx';
+import TaskUpdate from './components/task/TaskUpdate.jsx';
 
 const router = createBrowserRouter([
     {
@@ -26,16 +29,20 @@ const router = createBrowserRouter([
       element: <Todos />,
     },
     {
+      path: "todos/:todoId/task",
+      element: <Tasks />,
+    },
+    {
       path: "/todos/create",
       element: <TodoCreate />,
     },
     {
-      path: "/todos/:todoId/detail",
-      element: <TodoDetail />,
-    },
-    {
       path: "/todos/:todoId/update",
       element: <TodoUpdate />,
+    },
+    {
+      path: "/todos/:todoId/task/:taskId/update",
+      element: <TaskUpdate />,
     },
     {
       path: "/register",

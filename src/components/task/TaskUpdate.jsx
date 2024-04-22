@@ -10,16 +10,16 @@ import '../css/Todo.css';
 
 import UserService from '../../services/UserService.js'
 
-import schema from './todoValidationSchema.js'
 
-const TodoDelete = () => {
+const TaskUpdate = () => {
     const {todoId} = useParams()
+    const {taskId} = useParams()
     const [responseMessage, setResponseMessage] = useState();
 
     // The 'location' of the the link, gives us an possibility to get some data associated with the link we came from to this component
     const location = useLocation()
     // We get the state, ie the given note to edit and store that as the first currentNote
-    const [currentTodo] = useState(location.state)
+    const [currentTask] = useState(location.state)
 
     const navigate = useNavigate();
 
@@ -33,15 +33,15 @@ const TodoDelete = () => {
     })
 
     // doUpdate is the one called by the forms handleSubmit
-    const doDelete = async (formData) => {
+    const doUpdate = async (formData) => {
 
         try {
-            const response = await UserService.removeTodo(todoId, formData);
+            const response = await UserService.changeTaskForUser(todoId, taskId, formData);
             // Show message and wait 3 second before going back
             setResponseMessage(response.data.message)
 
             setTimeout(() => {
-                navigate("/todos");
+                navigate(-1);
             }, 3000)
 
 
@@ -70,22 +70,32 @@ const TodoDelete = () => {
     return (
         <>
             <div className="col-md-12">
-                <div className="card card-container card-10 fw-bold">
-                    <h1>Delete todo</h1>
-                    <form onSubmit={handleSubmit(doDelete)}>
-                    <div className="form-group">
-                            <label htmlFor="todo">Todo</label>
-                            <input type="text" {...register("todo")} defaultValue = {currentTodo.todo} readOnly className="form-control bg-light border border-dark"/>
-                            {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
+                <div className="card card-container card-9 fw-bold">
+                    <h1>Edit task</h1>
+                    <form onSubmit={handleSubmit(doUpdate)}>
+                        <div className="form-group">
+                            <label htmlFor="task">Task</label>
+                            <input type="text" {...register("task")} defaultValue = {currentTask.task} className="form-control bg-light border border-dark"/>
+                            {errors?.task && <label className="error-feedback">{errors.task.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="priority">Priority</label>
+                            <input type="text" {...register("priority")} defaultValue = {currentTask.priority} className="form-control bg-light border border-dark"/>
+                            {errors?.priority && <label className="error-feedback">{errors.priority.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="estimated_time">Estimated time</label>
+                            <input type="text" {...register("estimated_time")} defaultValue = {currentTask.estimated_time} className="form-control bg-light border border-dark"/>
+                            {errors?.estimated_time && <label className="error-feedback">{errors.estimated_time.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
                             
-                            <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-12  btn-block">
+                            <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-10 btn-block">
                                 Cancel
                             </button>
-                            <button className="btn btn-dark border border-2 border-dark button-11  btn-block" >
-                                Delete
+                            <button className="btn btn-dark border border-2 border-dark button-9 btn-block" >
+                                Update
                             </button>
                         </div>
                     </form>
@@ -101,4 +111,4 @@ const TodoDelete = () => {
     )
 }
 
-export default TodoDelete;
+export default TaskUpdate;
