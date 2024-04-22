@@ -17,6 +17,9 @@ import TaskUpdate from './components/task/TaskUpdate.jsx';
 import TaskDelete from './components/task/TaskDelete.jsx';
 import TaskCreate from './components/task/TaskCreate.jsx';
 
+// Dogwater
+import ErrorPage from "./components/ErrorPage.jsx";
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -69,6 +72,10 @@ const router = createBrowserRouter([
     {
       path: "/todos/:todoId/delete",
       element: <TodoDelete />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
     },
   ]);
 
