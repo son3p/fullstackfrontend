@@ -10,6 +10,8 @@ import '../css/Todo.css';
 
 import UserService from '../../services/UserService.js'
 
+import schema from './taskValidationSchema.js'
+
 
 const TaskUpdate = () => {
     const {todoId} = useParams()
@@ -36,7 +38,7 @@ const TaskUpdate = () => {
     const doUpdate = async (formData) => {
 
         try {
-            const response = await UserService.changeTaskForUser(todoId, taskId, formData);
+            const response = await UserService.changeTaskForUser(formData, todoId, taskId);
             // Show message and wait 3 second before going back
             setResponseMessage(response.data.message)
 
