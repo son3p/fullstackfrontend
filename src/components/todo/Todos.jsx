@@ -27,13 +27,13 @@ const Todos = () => {
 
     const fields = [
         { name: 'id', label: 'Id' },
-        { name: 'task', label: 'Task' },
-        { name: 'createdAt', label: 'Creation time ' },];
+        { name: 'todo', label: 'Todo' },
+        { name: 'createdAt', label: 'Creation time ' }];
 
     return (
         <>
             <div className="m-4 " style={{ fontFamily: 'Courier New' }}>
-                <h1 >Tasks</h1>
+                <h1 >Todos</h1>
                 <hr />
             </div>
             <div className="container mt-5 mb-5">

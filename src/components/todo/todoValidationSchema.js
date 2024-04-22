@@ -1,15 +1,9 @@
 import * as yup from "yup";
 
 const todoSchema = yup.object().shape({
-    task: yup
+    todo: yup
         .string()
-        .required("Task is required!"),
-    body: yup
-        .string()
-        .required("body is required"),
-    estimated_time: yup
-        .number("Must be a positive number!")
-        .positive()
+        .required("Todo is required!"),
 });
 
 export default todoSchema
