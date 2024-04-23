@@ -73,10 +73,20 @@ const TodoDelete = () => {
                 <div className="card card-container card-10 fw-bold">
                     <h1>Delete todo</h1>
                     <form onSubmit={handleSubmit(doDelete)}>
-                    <div className="form-group">
+                        <div className="form-group">
                             <label htmlFor="todo">Todo</label>
                             <input type="text" {...register("todo")} defaultValue = {currentTodo.todo} readOnly className="form-control bg-light border border-dark"/>
                             {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="category">Category</label>
+                            <input type="text" {...register("category")} defaultValue = {currentTodo.category} readOnly className="form-control bg-light border border-dark"/>
+                            {errors?.category && <label className="error-feedback">{errors.category.message}</label>}
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="status">Status</label>
+                            <input type="text" {...register("status")} defaultValue = {currentTodo.status} readOnly className="form-control bg-light border border-dark"/>
+                            {errors?.status && <label className="error-feedback">{errors.status.message}</label>}
                         </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">

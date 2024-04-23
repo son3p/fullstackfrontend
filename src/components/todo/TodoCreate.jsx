@@ -70,6 +70,16 @@ const TodoCreate = () => {
                             <input type="text" {...register("todo")}  className="form-control bg-light border border-dark" />
                             {errors?.todo && <label className="error-feedback">{errors.todo.message}</label>}
                         </div>
+                        <div className="form-group ">
+                            <label htmlFor="category">Category</label>
+                            <input type="text" {...register("category")}  className="form-control bg-light border border-dark" />
+                            {errors?.category && <label className="error-feedback">{errors.category.message}</label>}
+                        </div>
+                        <div className="form-group ">
+                            <label htmlFor="status">Status</label>
+                            <input type="text" {...register("status")}  className="form-control bg-light border border-dark" />
+                            {errors?.status && <label className="error-feedback">{errors.status.message}</label>}
+                        </div>
                         <p></p>
                         <div className="form-group d-flex justify-content-between">
                             <button onClick={handleCancel} className="btn btn-dark border border-2 border-dark button-8 btn-block">
