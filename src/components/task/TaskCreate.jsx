@@ -34,7 +34,7 @@ const TaskCreate = () => {
             setResponseMessage(response.data.message)
 
             setTimeout(() => {
-                navigate("/todos");
+                navigate(-1);
             }, 3000)
 
 
