@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import UserService from '../../services/UserService.js';
 import Footer from "../Footer.jsx";
 import { Link } from 'react-router-dom'
@@ -8,18 +8,19 @@ const Tasks = () => {
     const { todoId } = useParams();
     const [tasks, setTasks] = useState([]);
     const [error, setError] = useState('');
-    const [parentTodos, setParentTodos] = useState({});
+    const [parentTodo, setParentTodo] = useState(null); // State to hold the parent todo
 
-    // Function to fetch parent todos
-    const getParentTodos = async () => {
+    // Function to fetch parent todo
+    const getParentTodo = async () => {
         try {
             const response = await UserService.fetchTodosForUser();
             const todos = response.data.data;
-            const parentTodosObj = {};
-            todos.forEach(todo => {
-                parentTodosObj[todo._id] = todo;
-            });
-            setParentTodos(parentTodosObj);
+
+            // Find the todo with matching todoId
+            const parentTodo = todos.find(todo => todo.id === todoId);
+
+            console.log('Parent Todo:', parentTodo); // Log the parentTodo
+            setParentTodo(parentTodo);
         } catch (err) {
             setError(err.message);
         }
@@ -29,6 +30,7 @@ const Tasks = () => {
     const getAllTasks = async () => {
         try {
             const response = await UserService.fetchTasksForUser(todoId);
+            console.log('Tasks Response:', response.data.data); // Log tasks response
             setTasks(response.data.data);
         } catch (err) {
             setError(err.message);
@@ -37,7 +39,7 @@ const Tasks = () => {
 
     useEffect(() => {
         getAllTasks();
-        getParentTodos();
+        getParentTodo();
     }, [todoId]);
 
     const fields = [
@@ -58,20 +60,21 @@ const Tasks = () => {
             <Link to="/todos" className="btn btn-dark border border-2 border-dark button-14 ms-4 bi bi-arrow-left-short ">Back</Link>
             <div className='container mt-5 mb-5 '>
                 <Link className="btn btn-dark border border-2 border-dark button-3 bi-journal-plus mb-5 " to={`/todos/${todoId}/task/create`}>Create new task</Link>
+                {/* Display parent todo, category, and status if parentTodo exists */}
+                {parentTodo && (
+                    <div className="fs-5 mb-4">
+                        <strong>Parent Todo:</strong> {parentTodo.todo}
+                        <br />
+                        <strong>Category:</strong> {parentTodo.category}
+                        <br />
+                        <strong>Status:</strong> {parentTodo.status}
+                    </div>
+                )}
                 <div className="list-group">
                     <div className="row">
                         {tasks.map((task, rowKey) => (
-                            <div key={rowKey} className="col-md-6 mb-3 ">
+                            <div key={rowKey} className="col-md-6 mb-3">
                                 <li className="list-group-item border border-dark rounded">
-                                {parentTodos[task.todoId] && (
-                                                <div className="mt-2">
-                                                    <strong>Parent Todo:</strong> {parentTodos[task.todoId].todo}
-                                                    <br />
-                                                    <strong>Category:</strong> {parentTodos[task.todoId].category}
-                                                    <br />
-                                                    <strong>Status:</strong> {parentTodos[task.todoId].status}
-                                                </div>
-                                            )}
                                     <div>
                                         <div className="mt-4">
                                             {fields.map((field, fieldKey) => (
@@ -80,9 +83,8 @@ const Tasks = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                        <div className=" mt-3 ">
-                                           
-                                            <Link className="btn btn-dark border border-2 border-dark me-4  button-15" to={`${task.id}/update`} state={task}>Edit</Link>
+                                        <div className="mt-3">
+                                            <Link className="btn btn-dark border border-2 border-dark me-4 button-15" to={`${task.id}/update`} state={task}>Edit</Link>
                                             <Link className="btn btn-dark border border-2 border-dark me-4 button-16" to={`${task.id}/delete`} state={task}>Delete</Link>
                                         </div>
                                     </div>
