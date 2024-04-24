@@ -63,20 +63,25 @@ const Tasks = () => {
                         {tasks.map((task, rowKey) => (
                             <div key={rowKey} className="col-md-6 mb-3 ">
                                 <li className="list-group-item border border-dark rounded">
-                                    <div>
-                                        {fields.map((field, fieldKey) => (
-                                            <div key={fieldKey}>
-                                                <strong>{field.label}</strong>: {task[field.name]}
-                                            </div>
-                                        ))}
-                                        <div className=" mt-2 ">
-                                            {parentTodos[task.todoId] && (
-                                                <div>
+                                {parentTodos[task.todoId] && (
+                                                <div className="mt-2">
                                                     <strong>Parent Todo:</strong> {parentTodos[task.todoId].todo}
-                                                    <strong>Parent Todo:</strong> {parentTodos[task.todoId].category}
-                                                    <strong>Parent Todo:</strong> {parentTodos[task.todoId].status}
+                                                    <br />
+                                                    <strong>Category:</strong> {parentTodos[task.todoId].category}
+                                                    <br />
+                                                    <strong>Status:</strong> {parentTodos[task.todoId].status}
                                                 </div>
                                             )}
+                                    <div>
+                                        <div className="mt-4">
+                                            {fields.map((field, fieldKey) => (
+                                                <div key={fieldKey}>
+                                                    <strong>{field.label}</strong>: {task[field.name]}
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className=" mt-3 ">
+                                           
                                             <Link className="btn btn-dark border border-2 border-dark me-4  button-15" to={`${task.id}/update`} state={task}>Edit</Link>
                                             <Link className="btn btn-dark border border-2 border-dark me-4 button-16" to={`${task.id}/delete`} state={task}>Delete</Link>
                                         </div>
