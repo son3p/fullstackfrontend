@@ -7,7 +7,7 @@ const Homepage = () => (
         <div className="m-4">
             <h1 >Home</h1>
             <hr />
-            <h3>Welcomne to the student made To Do List Application!</h3>
+            <h3>Welcome to the student made To Do List Application!</h3>
         </div>
 
 
