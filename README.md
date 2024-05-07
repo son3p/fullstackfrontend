@@ -1,20 +1,33 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Frontend Documentation
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Introduction
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This README provides an overview of the frontend development for the Todo Application.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Table of Contents
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+1. [Introduction](#introduction)
+2. [Technology Stack](#technology-stack)
+3. [Local Development](#local-development)
+4. [Deployment](#deployment)
+5. [Styling](#styling)
+
+---
+
+## Technology Stack
+
+The frontend is developed using React.js and communicates with the REST API for CRUD operations. Both the web and mobile versions support creating, reading, updating, and deleting todos and tasks.
+
+## Local Development
+
+To run the web application locally, use Visual Studio Code and run the following command in the terminal: `npm run dev`. Alternatively, access the application via the hosted URL: https://todofullstack.azurewebsites.net/ currently hosted on Azure.
+
+## Deployment
+
+The web application is hosted on Azure and can be accessed via the provided URL. Deployment is handled automatically through CI/CD pipelines.
+
+## Styling
+
+Styling for the frontend is achieved using Bootstrap 5, Bootstrap Icons, and CSS, ensuring a visually appealing and responsive design across various screen sizes.
+
+---
